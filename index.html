@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Polat Hakkında</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#06b6d4;--glass:rgba(255,255,255,0.05)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;background:linear-gradient(180deg,#071025 0%, #071525 100%);color:#e6eef6;line-height:1.5}
+    .container{max-width:1000px;margin:32px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+    nav a:hover{color:white}
+    
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:24px;margin-top:28px;align-items:center}
+    .hero img{width:100%;border-radius:16px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+    .card{background:var(--card);padding:20px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);backdrop-filter:blur(6px)}
+    
+    h1{margin:0 0 12px;font-size:clamp(22px,3vw,34px)}
+    h2{margin-top:0}
+    p.lead{color:var(--muted);margin:0 0 16px;font-size:18px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041025;font-weight:600;text-decoration:none;border:none;cursor:pointer}
+
+    .features{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .feature{flex:1 1 200px;padding:14px;border-radius:10px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent)}
+
+    /* form */
+    form{display:flex;flex-direction:column;gap:10px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .row{display:flex;gap:10px;flex-wrap:wrap}
+
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      nav a{margin-left:8px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">P</div>
+        <div>
+          <div style="font-weight:700">Polat</div>
+          <div style="font-size:12px;color:var(--muted)">Kişisel Web Sitesi</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">Hakkında</a>
+        <a href="#hobbies">Hobiler</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Merhaba, ben Polat 👋</h1>
+        <p class="lead">19 yaşındayım, Aksaraylıyım ve şu an Antalya’da Bilgisayar Mühendisliği okuyorum. Web geliştirmeyi ve yeni teknolojiler öğrenmeyi çok seviyorum.</p>
+        <a href="#contact" class="btn">Bana Ulaş</a>
+      </div>
+      <img src="https://source.unsplash.com/400x400/?computer,tech" alt="Polat">
+    </section>
+
+    <section id="about" class="card" style="margin-top:28px">
+      <h2>Hakkımda</h2>
+      <p>Ben Polat, 2006 doğumluyum ve Aksaraylıyım. Şu anda Antalya’da yaşıyorum ve bilgisayar mühendisliği öğrencisiyim. Kodlama, algoritmalar ve yeni teknolojiler benim için bir tutku. Bu siteyi kendimi tanıtmak ve öğrendiklerimi paylaşmak için açtım.</p>
+    </section>
+
+    <section id="hobbies" class="card" style="margin-top:20px">
+      <h2>Hobilerim</h2>
+      <div class="features">
+        <div class="feature">
+          <h3>💻 Kodlama</h3>
+          <p>Java, JavaScript ve web geliştirme üzerine çalışıyorum.</p>
+        </div>
+        <div class="feature">
+          <h3>📚 Öğrenmek</h3>
+          <p>Yeni teknolojiler ve yazılım trendlerini takip ederim.</p>
+        </div>
+        <div class="feature">
+          <h3>🎮 Oyun</h3>
+          <p>Boş zamanlarımda strateji ve simülasyon oyunları oynarım.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card" style="margin-top:24px">
+      <h2>İletişim</h2>
+      <p><strong>Telefon:</strong> <a href="tel:+905335630768" style="color:var(--accent)">0533 563 07 68</a></p>
+      <p><strong>E-posta:</strong> <a href="mailto:keserpolat18@gmail.com" style="color:var(--accent)">keserpolat18@gmail.com</a></p>
+      <form id="contactForm">
+        <div class="row">
+          <input type="text" placeholder="Adınız" required />
+          <input type="email" placeholder="E-posta" required />
+        </div>
+        <textarea placeholder="Mesajınız..." rows="4" required></textarea>
+        <button type="submit" class="btn">Gönder</button>
+      </form>
+      <p id="formMessage" class="small" style="margin-top:10px;"></p>
+    </section>
+
+    <footer>
+      © 2025 Polat. Tüm hakları saklıdır.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const msg = document.getElementById('formMessage');
+      msg.textContent = "Teşekkürler! Mesajınız başarıyla gönderildi.";
+      msg.style.color = "#06b6d4";
+      this.reset();
+    });
+  </script>
+</body>
+</html>
